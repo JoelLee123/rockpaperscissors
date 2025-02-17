@@ -1,0 +1,74 @@
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #432E54;
+}
+
+h1 {
+    margin: 0;
+   color: whitesmoke;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px red;
+    padding: 20px;
+    background-color: #4B4376;
+}
+
+.buttons-container {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    padding: 20px;
+}
+
+/* Need to make button flex, as it behaves as block element by default]*/
+#buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.rps-button {
+    border: solid 1px red;
+    display: flex;
+    flex: 1;
+    background-color: burlywood;
+    border-radius: 10px;
+    padding: 10px;
+    color: brown;
+}
+
+.rps-button:hover {
+    background-color: #FFD700;
+    color: black;
+    transform: scale(1.1);  /* Make button slightly bigger */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.result-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    color: whitesmoke
+}
+
+.result-box {
+    display: flex;
+    flex: 1;
+    border: solid 1px red;
+    padding: 10px;
+    justify-content: center;
+    color: whitesmoke;
+}

@@ -12,6 +12,9 @@ let maxRounds = 5;
 //Labels - update scores, show winner
 const humanLabel = document.querySelector('#humanLabel');
 const computerLabel = document.querySelector('#computerLabel');
+const roundLabel = document.querySelector('#roundLabel');
+roundLabel.textContent = `Round ${currentRound} of ${maxRounds}`;
+
 const winnerLabel = document.querySelector('#winnerLabel');
 
 //Buttons - can only play game if buttons are clicked
@@ -40,17 +43,29 @@ function playGame(humanChoice) {
 
     //Move to next round
     currentRound++;
+    console.log(currentRound);
 
     if (currentRound > maxRounds) {
-        winnerLabel.textContent = "Game over! Final scores: Human - " + humanScore + ", Computer - " + computerScore;
+        displayWinner();
         //Game finished - disable buttons
         btnRock.disabled = true;
         btnPaper.disabled = true;
         btnScissors.disabled = true;
+        return; //Prevents round 6 of 5 from displaying
     }
+
+    roundLabel.textContent = `Round ${currentRound} of ${maxRounds}`
 }
 
-
+function displayWinner() {
+    if (humanScore > computerScore) {
+        winnerLabel.textContent = "GAME OVER: Human wins!";
+    } else if (computerScore > humanScore) {
+        winnerLabel.textContent = "GAME OVER: Computer wins!";
+    } else {
+        winnerLabel.textContent = "GAME OVER: It's a tie!";
+    }
+}
 
 function incrementScore(winner) { 
     if (winner === "Human wins!") {
@@ -72,6 +87,7 @@ function resetGame() {
     humanLabel.textContent = 0;
     computerLabel.textContent = 0;
     winnerLabel.textContent = "";
+    roundLabel.textContent = `Round ${currentRound} of ${maxRounds}`;
 
     btnRock.disabled = false;
     btnPaper.disabled = false;

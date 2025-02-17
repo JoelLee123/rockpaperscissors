@@ -3,21 +3,33 @@
 <head>
     <title>Rock Paper Scissors</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="rps.css">
     <script type="module" src="rps.js" defer></script>
     <script type="module" src="ui.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <div id="buttons">
-        <button id="btnRock">Rock</button>
-        <button id="btnPaper">Paper</button>
-        <button id="btnScissors">Scissors</button>
-        <button id="btnReset">Reset</button>
-    </div>
-    <div id="results">
-        <p>Player: <span id="humanLabel">0</span></p>
-        <p>Computer: <span id="computerLabel">0</span></p>
-        <p>Winner: <span id="winnerLabel">None</span></p>
-    </div>
+    <div class="page-container">
+        <h1>Rock Paper Scissors</h1>    
+        <div class="buttons-container">
+                <div id="buttons">
+                    <button id="btnRock" class="rps-button">Rock</button>
+                    <button id="btnPaper" class="rps-button">Paper</button>
+                    <button id="btnScissors" class="rps-button">Scissors</button>
+                    <button id="btnReset">Reset</button>
+            </div>
+        </div>
+        
+        <div id="results">
+            <div class="result-section">
+                <p><span id="roundLabel">0 of 5</span></p>
+                <p>Player: <span id="humanLabel">0</span></p>   
+                <p>Computer: <span id="computerLabel">0</span></p>               
+            </div>
+            <div class="result-box">
+                <p>Winner: <span id="winnerLabel">None</span></p>        
+            </div> 
+        </div>
+
+    </div>   
 </body>
 </html>
